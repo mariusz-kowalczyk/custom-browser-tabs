@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-plugin-custom-browser-tabs" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>CustomBrowserTabs</name>
+    <js-module name="CustomBrowserTabs" src="www/CustomBrowserTabs.js">
+        <clobbers target="CustomBrowserTabs" />
+    </js-module>
+    <platform name="android">
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="CustomBrowserTabs">
+                <param name="android-package" value="cordova-plugin-custom-browser-tabs.CustomBrowserTabs" />
+            </feature>
+        </config-file>
+        <config-file parent="/*" target="AndroidManifest.xml"></config-file>
+        
+        <framework src="com.android.support:customtabs:23.3.0"/>
+        <source-file src="src/android/CustomBrowserTabs.java" target-dir="src/pl/kowalczyk/mariusz/cordova" />
+    </platform>
+</plugin>
