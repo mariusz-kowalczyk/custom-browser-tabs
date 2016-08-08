@@ -40,7 +40,7 @@ public class CustomBrowserTabs extends CordovaPlugin {
         try {
             CustomTabsIntent.Builder builder = new CustomTabsIntent.Builder();
             CustomTabsIntent customTabsIntent = builder.build();
-            customTabsIntent.launchUrl(cordova.getActivity().getApplicationContext(), Uri.parse(url));
+            customTabsIntent.launchUrl(cordova.getActivity(), Uri.parse(url));
         }catch (android.content.ActivityNotFoundException e) {
             callbackContext.error("Error loading url "+url+":"+ e.toString());
         }
