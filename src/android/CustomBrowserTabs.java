@@ -20,6 +20,7 @@ public class CustomBrowserTabs extends CordovaPlugin {
     
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
+        callbackContext.success("success");
         if (action.equals("open")) {
             this.callbackContext = callbackContext;
             final String url = args.getString(0);
